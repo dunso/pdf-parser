@@ -1,5 +1,5 @@
 const root = __dirname + '/../../';
-var crf = require(root + 'src/core/cmap_reader_factory.js');
+var crf = require(root + 'src/core/cmap-reader-factory.js');
 
 var pdfJs = require(root + 'lib/pdf.js');
 pdfJs.PDFJS.workerSrc = root + 'lib/pdf.worker.js';
