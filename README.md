@@ -6,7 +6,7 @@ The pdf-parser is a parser of PDF content and layout information with [pdf.js](h
 
 To get a local copy of the current code, clone it using git:
 
-    $ git clone git://github.com/dunso/pdf-parser.git
+    $ git clone https://github.com/dunso/pdf-parser.git
     $ cd pdf-parser
 
 Next, install Node.js via the [official package](http://nodejs.org) or via
@@ -64,6 +64,10 @@ The tool can convert pdf to json as bellow:
 }
 
 ```
+
+## Java Usage
+
+The usage of how to call the pdf-parser in java : [java-pdf-parser](https://github.com/dunso/java-pdf-parser)
 
 ## Questions
 

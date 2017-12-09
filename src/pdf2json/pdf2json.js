@@ -50,7 +50,7 @@ function pdf2json(pdfPath, callback) {
                         page.pageId = parseInt(textContent.items[0].pageId);
                     }
                     page.texts = textContent.items
-                        .filter(item => item.str != null && item.str != "")
+                        .filter(item => item.str != null && item.str != "" && item.str !=" ")
                         .map(item => ({
                             text: item.str,
                             direction: item.dir,
