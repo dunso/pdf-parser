@@ -16,13 +16,15 @@ install all dependencies for pdf-parser:
 
     $ npm install
 
-## Usage
+## Example
 
 The example is in the file example/node/pdf2json.js.
 
 If you are in the root directory, you can use `node example/node/pdf2json` to run the example.
 
 Or you can `cd example/node` and then `node pdf2json`.
+
+## Usage
 
 ```
 var pdfParser = require('pdf-parser');
