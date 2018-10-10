@@ -1,6 +1,6 @@
 {
   "name": "pdf-parser",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Convert PDF content and layout information with pdf.js",
   "main": "index.js",
   "dependencies": {
