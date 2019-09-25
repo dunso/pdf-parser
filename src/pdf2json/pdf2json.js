@@ -9,16 +9,15 @@ pdfJs.PDFJS.cMapUrl = root + 'lib/cmaps/';
 pdfJs.PDFJS.cMapPacked = true;
 
 function timeoutCallbackWrapper(callback, timeout) {
-    if(!timeout){
-        timeout = 10000;
-    }
-    var isCalled = false;
-    var timer = setTimeout(() => {
-        if (!isCalled) {
-            callback(new Error('timeout after ' + timeout + ' ms'), null);
-            isCalled = true;
-        }
-    }, timeout);
+    if (timeout) {
+		var isCalled = false;
+		var timer = setTimeout(() => {
+			if (!isCalled) {
+				callback(new Error('timeout after ' + timeout + ' ms'), null);
+				isCalled = true;
+			}
+		}, timeout);
+	}
     return (err, result) => {
         if (!isCalled) {
             isCalled = true;
@@ -44,9 +43,9 @@ function composePdfSource(src) {
     );
 }
 
-function pdf2json(pdfPath, callback) {
+function pdf2json(pdfPath, callback, timeout) {
     // wrap callback to ensure one-off and set timeout
-    var callback = timeoutCallbackWrapper(callback);
+    var callback = timeoutCallbackWrapper(callback, timeout);
 
     pdfJs.getDocument(
         composePdfSource(pdfPath)
