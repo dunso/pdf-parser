@@ -9,7 +9,7 @@ pdfJs.PDFJS.cMapUrl = root + 'lib/cmaps/';
 pdfJs.PDFJS.cMapPacked = true;
 
 function timeoutCallbackWrapper(callback, timeout) {
-   if (timeout) {
+   if (timeout && timeout > 0) {
       var isCalled = false;
       var timer = setTimeout(() => {
          if (!isCalled) {
@@ -44,6 +44,9 @@ function composePdfSource(src) {
 }
 
 function pdf2json(pdfPath, callback, timeout) {
+   if (timeout === undefined) {
+	   timeout = 10000;
+   }
    // wrap callback to ensure one-off and set timeout
    var callback = timeoutCallbackWrapper(callback, timeout);
 
