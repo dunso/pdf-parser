@@ -10,14 +10,14 @@ pdfJs.PDFJS.cMapPacked = true;
 
 function timeoutCallbackWrapper(callback, timeout) {
     if (timeout) {
-		var isCalled = false;
-		var timer = setTimeout(() => {
-			if (!isCalled) {
-				callback(new Error('timeout after ' + timeout + ' ms'), null);
-				isCalled = true;
-			}
-		}, timeout);
-	}
+        var isCalled = false;
+        var timer = setTimeout(() => {
+            if (!isCalled) {
+                callback(new Error('timeout after ' + timeout + ' ms'), null);
+                isCalled = true;
+            }
+        }, timeout);
+    }
     return (err, result) => {
         if (!isCalled) {
             isCalled = true;
