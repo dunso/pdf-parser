@@ -15,7 +15,7 @@ function timeoutCallbackWrapper(callback, timeout) {
     var isCalled = false;
     var timer = setTimeout(() => {
         if (!isCalled) {
-            callback(null, new Error('timeout after ' + timeout + ' ms'));
+            callback(new Error('timeout after ' + timeout + ' ms'), null);
             isCalled = true;
         }
     }, timeout);
